@@ -30,6 +30,9 @@ public class Student {
     }
 
     public void setStudentNumber(int studentNumber) {
-        this.studentNumber = studentNumber;
+        if(studentNumber >=100000000 && studentNumber<=999999999)
+            this.studentNumber = studentNumber;
+        else
+            throw new IllegalArgumentException("student # out of range 100000000-999999999");
     }
 }

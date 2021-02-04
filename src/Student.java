@@ -14,7 +14,10 @@ public class Student {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        if(firstName.length()>=2)
+            this.firstName = firstName;
+        else
+            throw new IllegalArgumentException("Name should be at least 2 characters");
     }
 
     public String getLastName() {
@@ -22,7 +25,10 @@ public class Student {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        if(lastName.length()>=2)
+            this.lastName = lastName;
+        else
+            throw new IllegalArgumentException("Last name should be at least 2 characters");
     }
 
     public int getStudentNumber() {

@@ -4,13 +4,13 @@ public class Student {
     private String firstName = "Yuliya";
     private String lastName = "Barson";
     private int studentNumber = 200468772;
-    private ArrayList<String> interests;
+    private ArrayList<String> interest;
 
-    public Student(String firstName, String lastName, int studentNumber, ArrayList<String>interests) {
+    public Student(String firstName, String lastName, int studentNumber, ArrayList<String>interest) {
         setFirstName(firstName);
         setLastName(lastName);
         setStudentNumber(studentNumber);
-        setInterests(interests);
+        setInterests(interest);
     }
 
     public String getFirstName() {
@@ -46,7 +46,11 @@ public class Student {
             throw new IllegalArgumentException("student # out of range 100000000-999999999");
     }
 
-    public static ArrayList<String> getInterests()
+    public ArrayList<String> getInterest() {
+        return interest;
+    }
+
+    public static ArrayList<String> getAllInterests()
     {
         ArrayList<String> interests = new ArrayList<>();
         interests.add("Basketball");
@@ -64,12 +68,12 @@ public class Student {
     }
 
     public void setInterests(ArrayList<String> interests) {
-        ArrayList<String> validInterests = getInterests();
+        ArrayList<String> validInterests = getAllInterests();
         for(String interest : interests)
         {
             if(!validInterests.contains(interest))
                 throw new IllegalArgumentException(interest + "is not valid. Valid option are: " + validInterests);
         }
-        this.interests = interests;
+        this.interest = interests;
     }
 }

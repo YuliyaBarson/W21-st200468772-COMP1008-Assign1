@@ -6,10 +6,11 @@ public class Student {
     private int studentNumber = 200468772;
     private ArrayList<String> interests;
 
-    public Student(String firstName, String lastName, int studentNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.studentNumber = studentNumber;
+    public Student(String firstName, String lastName, int studentNumber, ArrayList<String>interests) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setStudentNumber(studentNumber);
+        setInterests(interests);
     }
 
     public String getFirstName() {

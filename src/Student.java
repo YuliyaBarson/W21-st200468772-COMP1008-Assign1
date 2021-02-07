@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Student {
     private String firstName = "Yuliya";
     private String lastName = "Barson";
     private int studentNumber = 200468772;
+    private ArrayList<String> interests;
 
     public Student(String firstName, String lastName, int studentNumber) {
         this.firstName = firstName;
@@ -40,5 +43,32 @@ public class Student {
             this.studentNumber = studentNumber;
         else
             throw new IllegalArgumentException("student # out of range 100000000-999999999");
+    }
+
+    public static ArrayList<String> getInterests()
+    {
+        ArrayList<String> interests = new ArrayList<>();
+        interests.add("Basketball");
+        interests.add("Singing");
+        interests.add("Dancing");
+        interests.add("Reading");
+        interests.add("Volleyball");
+        interests.add("Skiing");
+        interests.add("Surfing");
+        interests.add("Studying");
+        interests.add("IT");
+        interests.add("Medicine");
+        interests.add("Sleeping");
+        return interests;
+    }
+
+    public void setInterests(ArrayList<String> interests) {
+        ArrayList<String> validInterests = getInterests();
+        for(String interest : interests)
+        {
+            if(!validInterests.contains(interest))
+                throw new IllegalArgumentException(interest + "is not valid. Valid option are: " + validInterests);
+        }
+        this.interests = interests;
     }
 }

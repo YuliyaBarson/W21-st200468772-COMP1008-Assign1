@@ -1,3 +1,7 @@
+package models;
+
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 
 public class Student {
@@ -5,14 +9,26 @@ public class Student {
     private String lastName;
     private int studentNumber;
     private ArrayList<String> interest;
+    private Image cardImage;
 
     public Student(String firstName, String lastName, int studentNumber, ArrayList<String>interest) {
         setFirstName(firstName);
         setLastName(lastName);
         setStudentNumber(studentNumber);
         setInterests(interest);
+        setCardImage();
     }
 
+    private void setCardImage()
+    {
+        String filePath = String.format("images/%s%s.jpg", firstName, lastName);
+//        System.out.println(filePath);
+        cardImage = new Image(filePath);
+    }
+
+    public Image getCardImage() {
+        return cardImage;
+    }
     public String getFirstName() {
         return firstName;
     }

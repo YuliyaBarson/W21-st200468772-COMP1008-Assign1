@@ -3,6 +3,7 @@ package models;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Student {
     private String firstName;
@@ -29,15 +30,17 @@ public class Student {
     public Image getCardImage() {
         return cardImage;
     }
+
     public String getFirstName() {
         return firstName;
     }
 
     public void setFirstName(String firstName) {
-        if(firstName.length()>=2)
+        firstName= firstName.substring(0,1).toUpperCase(Locale.ROOT) + firstName.substring(1).toLowerCase(Locale.ROOT);//this method will capitalize the first letter
+        if(firstName.length()>=2)//this argument will check if the String provided contains at least 2 characters
             this.firstName = firstName;
         else
-            throw new IllegalArgumentException("Name should be at least 2 characters");
+            throw new IllegalArgumentException("First name should be at least 2 characters");
     }
 
     public String getLastName() {
@@ -45,6 +48,7 @@ public class Student {
     }
 
     public void setLastName(String lastName) {
+        lastName= lastName.substring(0,1).toUpperCase(Locale.ROOT) + lastName.substring(1).toLowerCase(Locale.ROOT);
         if(lastName.length()>=2)
             this.lastName = lastName;
         else

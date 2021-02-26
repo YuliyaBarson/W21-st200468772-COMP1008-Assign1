@@ -7,7 +7,7 @@ public class StudentClassTest {
         ArrayList<String> studentOneInterests = new ArrayList<>();
         studentOneInterests.addAll(Arrays.asList("IT", "Sleeping"));
 
-        Student studentOne = new Student("Katarina", "Wow", 123456789, studentOneInterests);
+        Student studentOne = new Student("Yuliya", "Barson", 200468772, studentOneInterests);
 
         System.out.println(studentOne.getFirstName());
         System.out.println(studentOne.getLastName());

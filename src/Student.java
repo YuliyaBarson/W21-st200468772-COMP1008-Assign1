@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class Student {
-    private String firstName = "Yuliya";
-    private String lastName = "Barson";
-    private int studentNumber = 200468772;
+    private String firstName;
+    private String lastName;
+    private int studentNumber;
     private ArrayList<String> interest;
 
     public Student(String firstName, String lastName, int studentNumber, ArrayList<String>interest) {
@@ -64,6 +64,7 @@ public class Student {
         interests.add("IT");
         interests.add("Medicine");
         interests.add("Sleeping");
+        interests.add("Yoga");
         return interests;
     }
 

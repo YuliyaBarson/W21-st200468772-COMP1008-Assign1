@@ -1,17 +1,24 @@
+/** Application purpose: Student card
+ * Author: Yuliya Barson
+ * Date: Feb 27,2021
+ * Time: 14:45
+**/
+
+
 package models;
-
 import javafx.scene.image.Image;
-
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class Student {
+    //created private variables
     private String firstName;
     private String lastName;
     private int studentNumber;
     private ArrayList<String> interest;
     private Image cardImage;
 
+    //constructor that takes 4 arguments
     public Student(String firstName, String lastName, int studentNumber, ArrayList<String>interest) {
         setFirstName(firstName);
         setLastName(lastName);
@@ -23,7 +30,6 @@ public class Student {
     private void setCardImage()
     {
         String filePath = String.format("images/%s%s.jpg", firstName, lastName);
-//        System.out.println(filePath);
         cardImage = new Image(filePath);
     }
 
